@@ -9,3 +9,8 @@
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+# Sensitive information that should not be included in the github repository
+if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zsensitive" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zsensitive"
+fi
